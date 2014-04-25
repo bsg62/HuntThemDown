@@ -1,0 +1,27 @@
+h1 Listing victims
+
+table
+  thead
+    tr
+      th Date
+      th Name
+      th Reason
+      th Ip
+      th
+      th
+      th
+
+  tbody
+    - @victims.each do |victim|
+      tr
+        td = victim.date
+        td = victim.name
+        td = victim.reason
+        td = victim.ip
+        td = link_to 'Show', victim
+        td = link_to 'Edit', edit_victim_path(victim)
+        td = link_to 'Destroy', victim, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Victim', new_victim_path

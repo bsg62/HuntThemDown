@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Date:
+  = @victim.date
+p
+  strong Name:
+  = @victim.name
+p
+  strong Reason:
+  = @victim.reason
+p
+  strong Ip:
+  = @victim.ip
+
+= link_to 'Edit', edit_victim_path(@victim)
+'|
+= link_to 'Back', victims_path
