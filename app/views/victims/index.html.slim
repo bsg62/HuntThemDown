@@ -1,13 +1,12 @@
 h1 Listing victims
 
-table
+table.table.table-striped.table-condensed
   thead
     tr
       th Date
       th Name
       th Reason
       th Ip
-      th
       th
       th
 
@@ -18,10 +17,7 @@ table
         td = victim.name
         td = victim.reason
         td = victim.ip
-        td = link_to 'Show', victim
         td = link_to 'Edit', edit_victim_path(victim)
-        td = link_to 'Destroy', victim, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
+        td = link_to 'Delete', victim, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 = link_to 'New Victim', new_victim_path

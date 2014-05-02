@@ -6,8 +6,10 @@ html
     == javascript_include_tag('application', 'data-turbolinks-track' => true)
     == csrf_meta_tags
   body
-    - if user_logged_in?
-      p
-        | You're logged in!
-        == link_to '(Logout)', '/logout'
-    == yield
+    .container
+      .row
+        - if user_logged_in?
+          p
+            | You're logged in! 
+            == link_to '(Logout)', '/logout'
+        == yield
