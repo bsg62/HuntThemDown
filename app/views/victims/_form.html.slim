@@ -1,4 +1,4 @@
-= form_for @victim do |f|
+= form_for @victim, html: {class: 'form-horizontal'} do |f|
   - if @victim.errors.any?
     #error_explanation
       h2 = "#{pluralize(@victim.errors.count, "error")} prohibited this victim from being saved:"
@@ -6,16 +6,23 @@
         - @victim.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :date
-    = f.date_select :date
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :reason
-    = f.text_field :reason
-  .field
-    = f.label :ip
-    = f.text_field :ip
-  .actions = f.submit 'Save'
+  .form-group
+    = f.label :date, class: 'col-sm-1 control-label'
+    .col-sm-5
+      = f.date_select :date
+  .form-group
+    = f.label :name, class: 'col-sm-1 control-label'
+    .col-sm-5
+      = f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label :reason, class: 'col-sm-1 control-label'
+    .col-sm-5
+      = f.text_field :reason, class: 'form-control'
+  .form-group
+    = f.label :ip, class: 'col-sm-1 control-label'
+    .col-sm-5
+      = f.text_field :ip, class: 'form-control'
+  .form-group
+    .col-sm-offset-1.col-sm-11
+      => f.submit 'Save', class: 'btn btn-success'
+      button.btn.btn-danger type="reset" Reset
