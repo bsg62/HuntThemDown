@@ -9,7 +9,9 @@ html
     .container
       .row
         - if user_logged_in?
-          p
-            | You're logged in! 
-            == link_to '(Logout)', '/logout'
+          header
+            a.title href="/" HuntThemDown
+            p.user
+              | You're logged in!
+              == link_to '(Logout)', '/logout'
         == yield
