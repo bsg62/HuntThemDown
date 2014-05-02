@@ -1,6 +1,6 @@
-h1 Listing users
+h1 User list
 
-table
+table.table.table-striped.table-condensed
   thead
     tr
       th Name
@@ -13,10 +13,7 @@ table
       tr
         td = user.name
         td = user.email
-        td = link_to 'Show', user
         td = link_to 'Edit', edit_user_path(user)
         td = link_to 'Delete', user, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
 
 = link_to 'New User', new_user_path

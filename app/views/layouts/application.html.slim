@@ -1,14 +1,14 @@
 doctype html
 html
   head
-    title HuntThemDown
+    title Hunt Them Down
     == render 'shared/head'
   body
     .container
       .row
         - if user_logged_in?
           header
-            a.title href="/" HuntThemDown
+            a.title href="/" Hunt Them Down
             p.user
               | You're logged in!
               == link_to '(Logout)', '/logout'
