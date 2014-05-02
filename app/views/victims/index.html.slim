@@ -13,7 +13,7 @@ table.table.table-striped.table-condensed
   tbody
     - @victims.each do |victim|
       tr
-        td = victim.date
+        td = victim.date.strftime('%d.%m.%Y')
         td = victim.name
         td = victim.reason
         td = victim.ip
