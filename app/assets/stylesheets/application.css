@@ -17,3 +17,7 @@
 input:focus, button:focus {
     outline: none !important;
 }
+
+a.btn, a.btn:hover {
+    color: #FFFFFF !important;
+}
