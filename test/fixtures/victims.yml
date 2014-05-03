@@ -5,9 +5,11 @@ one:
   name: MyString
   reason: MyString
   ip: MyString
+  user_id: 1
 
 two:
   date: 2014-04-25
   name: MyString
   reason: MyString
   ip: MyString
+  user_id: 1
