@@ -7,18 +7,18 @@ table.table.table-striped.table-condensed
       th User
       th Name
       th Reason
-      th Ip
+      th IP address
       th
       th
 
   tbody
     - @victims.each do |victim|
       tr
-        td = victim.date.strftime('%d.%m.%Y')
+        td = victim.created_at.strftime('%d.%m.%Y')
         td = victim.user.name
         td = victim.name
         td = victim.reason
-        td = victim.ip
+        td = victim.ip_address
         td = link_to 'Edit', edit_victim_path(victim)
         td = link_to 'Delete', victim, data: {:confirm => 'Are you sure?'}, :method => :delete
 

@@ -19,7 +19,7 @@ class VictimsControllerTest < ActionController::TestCase
 
   test "should create victim" do
     assert_difference('Victim.count') do
-      post :create, victim: { date: @victim.date, ip: @victim.ip, name: @victim.name, reason: @victim.reason }
+      post :create, victim: { ip_address: @victim.ip_address, name: @victim.name, reason: @victim.reason }
     end
 
     assert_redirected_to victims_url
@@ -36,7 +36,7 @@ class VictimsControllerTest < ActionController::TestCase
   end
 
   test "should update victim" do
-    patch :update, id: @victim, victim: { date: @victim.date, ip: @victim.ip, name: @victim.name, reason: @victim.reason }
+    patch :update, id: @victim, victim: { ip_address: @victim.ip_address, name: @victim.name, reason: @victim.reason }
     assert_redirected_to victims_url
   end
 

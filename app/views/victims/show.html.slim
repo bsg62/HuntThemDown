@@ -1,9 +1,6 @@
 p#notice = notice
 
 p
-  strong Date:
-  = @victim.date
-p
   strong Name:
   = @victim.name
 p
@@ -11,7 +8,7 @@ p
   = @victim.reason
 p
   strong Ip:
-  = @victim.ip
+  = @victim.ip_address
 
 = link_to 'Edit', edit_victim_path(@victim)
 '|
