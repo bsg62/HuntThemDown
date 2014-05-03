@@ -1,12 +1,13 @@
 class CreateVictims < ActiveRecord::Migration
   def change
     create_table :victims do |t|
-      t.date :date
+      t.timestamps
+      t.belongs_to :user
       t.string :name
       t.string :reason
-      t.string :ip
-
-      t.timestamps
+      t.string :url
+      t.string :ip_address
+      t.string :hostname
     end
   end
 end
