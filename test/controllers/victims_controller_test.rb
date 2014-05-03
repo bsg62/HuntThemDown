@@ -3,7 +3,7 @@ require 'test_helper'
 class VictimsControllerTest < ActionController::TestCase
   setup do
     @victim = victims(:one)
-    session[:user_id] = 1
+    session[:user_id] = User.first.id
   end
 
   test "should get index" do
