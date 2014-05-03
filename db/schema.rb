@@ -11,24 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140503170618) do
+ActiveRecord::Schema.define(version: 20140503200108) do
 
-  create_table "users", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "victims", force: true do |t|
-    t.date     "date"
-    t.string   "name"
-    t.string   "reason"
-    t.string   "ip"
+  create_table "comments", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "victim_id"
+    t.string   "body"
+  end
+
+  create_table "users", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+  end
+
+  create_table "victims", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "reason"
+    t.string   "url"
+    t.string   "ip_address"
+    t.string   "hostname"
   end
 
 end
