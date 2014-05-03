@@ -8,7 +8,14 @@ html
       .row
         header
           a.title href="/" Hunt Them Down
-          p.user
-            == "Hello, #{actor.name}! "
-            == link_to '(Logout)', '/logout'
+          nav.navbar.navbar-default
+            .container
+              ul.nav.navbar-nav
+                li
+                  a href=root_url Home
+                li
+                  a href=victims_url Victims
+                li
+                  a href=users_url User
+              p.navbar-text.navbar-right == "Hello, #{actor.name}! #{link_to('(Logout)', '/logout', class: 'navbar-link')}"
         == yield
