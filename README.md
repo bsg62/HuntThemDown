@@ -1,5 +1,5 @@
 # Hunt Them Down
-## Manage the heads of your enemies!
+### Manage the heads of your enemies!
 
 Hunt Them Down is proudly inspired by Joffrey Baratheon and Ser Ilyn Payne.
 
