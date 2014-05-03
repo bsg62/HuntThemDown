@@ -6,10 +6,9 @@ html
   body
     .container
       .row
-        - if user_logged_in?
-          header
-            a.title href="/" Hunt Them Down
-            p.user
-              | You're logged in!
-              == link_to '(Logout)', '/logout'
+        header
+          a.title href="/" Hunt Them Down
+          p.user
+            == "Hello, #{actor.name}! "
+            == link_to '(Logout)', '/logout'
         == yield
