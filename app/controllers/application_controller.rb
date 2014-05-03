@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def user
-    User.find(user_id)
+    User.find_by(id: user_id)
   end
   memoize :user
 
