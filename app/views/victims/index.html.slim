@@ -18,7 +18,7 @@ table.table.table-striped.table-condensed
         td = victim.user.name
         td = victim.name
         td = victim.reason
-        td = victim.ip_address
+        td = "#{victim.ip_address}, #{victim.hostname}"
         td = link_to 'Edit', edit_victim_path(victim)
         td = link_to 'Delete', victim, data: {:confirm => 'Are you sure?'}, :method => :delete
 

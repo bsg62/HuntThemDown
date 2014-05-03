@@ -1,3 +1,4 @@
+require 'resolv'
 require 'memoizable'
 
 class ApplicationController < ActionController::Base
