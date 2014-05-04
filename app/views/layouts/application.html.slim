@@ -12,12 +12,6 @@ html
             small Pre-Alpha
           nav.navbar.navbar-default
             .container
-              ul.nav.navbar-nav
-                li
-                  a href=root_url Home
-                li
-                  a href=victims_url Victims
-                li
-                  a href=users_url User
+              == render_navigation(renderer: :bootstrap_topbar_list, expand_all: true)
               p.navbar-text.navbar-right == "Hello, #{actor.name}! #{link_to('(Logout)', '/logout', class: 'navbar-link')}"
         == yield
