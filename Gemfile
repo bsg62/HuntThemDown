@@ -37,6 +37,8 @@ gem 'unicorn-rails', group: [:development, :test]
 
 gem 'memoizable'
 
+gem 'simple-navigation'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
