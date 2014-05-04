@@ -2,7 +2,10 @@ h2 Editing victim
 
 == render 'form'
 
+
 = link_to 'Show', @victim
-'|
+' |
 = link_to 'Back', victims_path
+' |
+= link_to 'Delete', @victim, data: {:confirm => 'Are you sure?'}, :method => :delete
 

@@ -3,23 +3,24 @@ h2 Victim list
 table.table.table-striped.table-condensed
   thead
     tr
-      th Date
-      th User
-      th Name
-      th Reason
-      th IP address
-      th
-      th
+      th.edit
+      th.date Date
+      th.user User
+      th.name Name
+      th.reason Reason
+      th.ip-address IP address
 
   tbody
     - @victims.each do |victim|
       tr
+        td.edit
+          a href=edit_victim_path(victim)
+            span.glyphicon.glyphicon-edit
+
         td = victim.created_at.strftime('%d.%m.%Y')
         td = victim.user.name
         td = victim.name
         td = victim.reason
         td = "#{victim.ip_address}, #{victim.hostname}"
-        td = link_to 'Edit', edit_victim_path(victim)
-        td = link_to 'Delete', victim, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 = link_to 'New Victim', new_victim_path
