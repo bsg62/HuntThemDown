@@ -33,6 +33,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 gem 'unicorn'
+gem 'unicorn-rails', group: [:development, :test]
 
 gem 'memoizable'
 
