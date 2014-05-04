@@ -12,6 +12,6 @@ html
             small Pre-Alpha
           nav.navbar.navbar-default
             .container
-              == render_navigation(renderer: :bootstrap_topbar_list, expand_all: true)
+              == render_navigation
               p.navbar-text.navbar-right == "Hello, #{actor.name}! #{link_to('(Logout)', '/logout', class: 'navbar-link')}"
         == yield
