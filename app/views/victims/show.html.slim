@@ -1,8 +1,4 @@
-h2 Victim
-
-p
-  strong Name:
-  =< @victim.name
+h2 = @victim.name
 
 - if @victim.offenses.any?
   h3 Offenses
@@ -20,7 +16,7 @@ p
         tr
           td = offense.created_at.strftime('%d.%m.%Y')
           td = link_to(offense.user.name, user_url(offense.user))
-          td = offense.offense_type.name
+          td = link_to(offense.offense_type.name, offenses_type_url(offense.offense_type.slug))
           td = offense.name
           td = link_to(offense.reason, offense.url, target: '_blank')
 
