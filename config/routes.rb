@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post '/login', to: 'session#create'
   get '/logout', to: 'session#destroy'
 
-  get '/offenses/:offense_type_slug', to: 'offenses#index_with_offense_type'
+  get '/offenses/:offense_type_slug', to: 'offenses#index_with_offense_type', as: :offenses_type
 
   resources :users
   resources :victims
