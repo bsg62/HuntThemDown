@@ -8,6 +8,15 @@ class OffensesController < ApplicationController
     @offenses = Offense.all
   end
 
+  # GET /offenses/warnings
+  # GET /offenses/warnings.json
+  def index_with_offence_type
+    offense_type = OffenseType.find_by(slug: params[:offense_type_slug])
+    @offenses = Offense.where(offense_type: offense_type)
+
+    render 'index'
+  end
+
   # GET /offenses/1
   # GET /offenses/1.json
   def show
