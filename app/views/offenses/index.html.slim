@@ -1,4 +1,7 @@
-h2 Offenses list
+- if @offense_type
+  h2 = "#{@offense_type.name} list"
+- else
+  h2 Offenses list
 
 table.table.table-striped.table-condensed
   thead
