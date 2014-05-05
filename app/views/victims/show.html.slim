@@ -1,8 +1,37 @@
-p#notice = notice
+h2 Victim
 
 p
   strong Name:
-  = @victim.name
+  =< @victim.name
+
+- if @victim.offenses.any?
+  h3 Offenses
+  table.table.table-striped.table-condensed
+    thead
+      tr
+        th.date Date
+        th.user User
+        th.type Type
+        th.name Name
+        th.reason Reason
+
+    tbody
+      - @victim.offenses.each do |offense|
+        tr
+          td = offense.created_at.strftime('%d.%m.%Y')
+          td = link_to(offense.user.name, user_url(offense.user))
+          td = offense.offense_type.name
+          td = offense.name
+          td = link_to(offense.reason, offense.url, target: '_blank')
+
+- if @victim.comments.any?
+  h3 Comments
+  table.table
+    - @victim.comments.each do |comment|
+      tr
+        td.date = comment.created_at.strftime('%d.%m.%Y')
+        td.name = comment.user.name
+        td.body = comment.body
 
 = link_to 'Edit', edit_victim_path(@victim)
 '|
