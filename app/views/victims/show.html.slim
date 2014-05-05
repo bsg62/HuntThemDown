@@ -3,12 +3,6 @@ p#notice = notice
 p
   strong Name:
   = @victim.name
-p
-  strong Reason:
-  = @victim.reason
-p
-  strong Ip:
-  = @victim.ip_address
 
 = link_to 'Edit', edit_victim_path(@victim)
 '|

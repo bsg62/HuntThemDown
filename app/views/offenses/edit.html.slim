@@ -1,0 +1,11 @@
+h2 Editing offense
+
+== render 'form'
+
+
+= link_to 'Show', @offense
+' |
+= link_to 'Back', offenses_url
+' |
+= link_to 'Delete', @offense, data: {:confirm => 'Are you sure?'}, :method => :delete
+

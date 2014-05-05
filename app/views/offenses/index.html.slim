@@ -1,0 +1,20 @@
+h2 Offenses list
+
+table.table.table-striped.table-condensed
+  thead
+    tr
+      th.edit
+      th.date Date
+      th.name Name
+
+  tbody
+    - @offenses.each do |offense|
+      tr
+        td.edit
+          a href=edit_victim_path(offense)
+            span.glyphicon.glyphicon-edit
+
+        td = offense.created_at.strftime('%d.%m.%Y')
+        td = offense.name
+
+= link_to 'New offense', new_offense_url

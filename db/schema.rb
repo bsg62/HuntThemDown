@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140503200108) do
+ActiveRecord::Schema.define(version: 20140505163935) do
 
   create_table "comments", force: true do |t|
     t.datetime "created_at"
@@ -19,6 +19,27 @@ ActiveRecord::Schema.define(version: 20140503200108) do
     t.integer  "user_id"
     t.integer  "victim_id"
     t.string   "body"
+  end
+
+  create_table "offense_types", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
+
+  create_table "offenses", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "victim_id"
+    t.integer  "user_id"
+    t.integer  "offense_type_id"
+    t.string   "name"
+    t.string   "duration"
+    t.date     "expires_at"
+    t.string   "reason"
+    t.string   "url"
+    t.string   "ip_address"
+    t.string   "hostname"
   end
 
   create_table "users", force: true do |t|
@@ -32,12 +53,7 @@ ActiveRecord::Schema.define(version: 20140503200108) do
   create_table "victims", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
     t.string   "name"
-    t.string   "reason"
-    t.string   "url"
-    t.string   "ip_address"
-    t.string   "hostname"
   end
 
 end
