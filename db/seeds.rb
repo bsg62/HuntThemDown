@@ -27,6 +27,20 @@ Offense.create(
   hostname: 'localhost'
 )
 
+Offense.create(
+    id: 2,
+    victim_id: 1,
+    offense_type_id: 2,
+    user_id: 1,
+    name: 'Troll 2',
+    duration: '',
+    expires_at: nil,
+    reason: 'is a troll',
+    url: 'http://www.google.com/',
+    ip_address: '8.8.8.8',
+    hostname: 'google-public-dns-a.google.com'
+)
+
 Comment.create(
   id: 1,
   user_id: 1,
