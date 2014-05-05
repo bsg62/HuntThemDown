@@ -11,6 +11,9 @@ table.table.table-striped.table-condensed
     - @victims.each do |victim|
       tr
         td.edit
+          a href=victim_path(victim)
+            span.glyphicon.glyphicon-eye-open
+          ' &nbsp;
           a href=edit_victim_path(victim)
             span.glyphicon.glyphicon-edit
 

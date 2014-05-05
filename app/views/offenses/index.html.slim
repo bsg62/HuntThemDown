@@ -5,7 +5,11 @@ table.table.table-striped.table-condensed
     tr
       th.edit
       th.date Date
+      th.user User
+      th.victim Victim
       th.name Name
+      th.reason Reason
+      th.ip_address IP address
 
   tbody
     - @offenses.each do |offense|
@@ -15,6 +19,10 @@ table.table.table-striped.table-condensed
             span.glyphicon.glyphicon-edit
 
         td = offense.created_at.strftime('%d.%m.%Y')
+        td = link_to(offense.user.name, user_url(offense.user))
+        td = link_to(offense.victim.name, victim_url(offense.victim))
         td = offense.name
+        td = link_to(offense.reason, offense.url, target: '_blank')
+        td = "#{offense.ip_address} #{offense.hostname}"
 
 = link_to 'New offense', new_offense_url
