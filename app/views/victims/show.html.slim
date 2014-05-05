@@ -1,5 +1,10 @@
 h2 = @victim.name
 
+- if known_ip_addresses.any?
+  p
+    strong Known IP addresses:
+    ==< known_ip_addresses.join(', ')
+
 - if offenses.any?
   h3 Offenses
   table.table.table-striped.table-condensed

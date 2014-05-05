@@ -5,6 +5,12 @@ class Offense < ActiveRecord::Base
 
   before_save :set_hostname
 
+  def trace_ip_address_url
+    unless ip_address.blank?
+      "http://www.utrace.de/?query=#{ip_address}"
+    end
+  end
+
 private
 
   def set_hostname

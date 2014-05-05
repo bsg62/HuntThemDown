@@ -26,6 +26,6 @@ table.table.table-striped.table-condensed
         td = link_to(offense.victim.name, victim_url(offense.victim))
         td = offense.name
         td = link_to(offense.reason, offense.url, target: '_blank')
-        td = "#{offense.ip_address} #{offense.hostname}"
+        td == "#{link_to(offense.ip_address, offense.trace_ip_address_url, target: '_blank')} #{offense.hostname}"
 
 = link_to 'New offense', new_offense_url
