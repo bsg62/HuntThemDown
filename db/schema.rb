@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140505163935) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "slug"
   end
 
   create_table "offenses", force: true do |t|

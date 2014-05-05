@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-OffenseType.create(id: 1, name: 'Warning')
-OffenseType.create(id: 2, name: 'Suspension')
+OffenseType.create(id: 1, name: 'Warning', slug: 'warnings')
+OffenseType.create(id: 2, name: 'Suspension', slug: 'suspensions')
 
 Victim.create(id: 1, name: 'The Troll')
 

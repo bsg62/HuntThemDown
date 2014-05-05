@@ -7,6 +7,8 @@
 one:
   id: 1
   name: Warnings
+  slug: warnings
 two:
   id: 2
-  name: Suspension
+  name: Suspensions
+  slug: suspensions
