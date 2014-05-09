@@ -20,11 +20,7 @@ class ApplicationController < ActionController::Base
     User.find_by(id: user_id)
   end
   memoize :user
-
-  def actor
-    user
-  end
-  helper_method :actor
+  helper_method :user
 
   def user_exists?
     !!user

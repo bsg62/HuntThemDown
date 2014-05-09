@@ -6,7 +6,7 @@
         - @offense.errors.full_messages.each do |message|
           li = message
 
-  = f.hidden_field :user_id, value: actor.id
+  = f.hidden_field :user_id, value: user.id
 
   .form-group
     = f.label :name, class: 'col-sm-1 control-label'
