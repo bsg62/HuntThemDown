@@ -6,6 +6,8 @@ table.table.table-striped.table-condensed
       th.edit
       th.date Date
       th.name Name
+      th.offenses Offenses
+      th.comments Comments
 
   tbody
     - @victims.each do |victim|
@@ -19,5 +21,7 @@ table.table.table-striped.table-condensed
 
         td = victim.created_at.strftime('%d.%m.%Y')
         td = victim.name
+        td = victim.offenses.count
+        td = victim.comments.count
 
 = link_to 'New Victim', new_victim_path
