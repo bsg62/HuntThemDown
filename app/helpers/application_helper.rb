@@ -15,7 +15,7 @@ module ApplicationHelper
     'He slimed me.',
     'Don\'t cross the streams!',
     'War. War never changes.',
-    '...But our princess is in another castle!',
+    'But our princess is in another castle!',
     'The cake is a lie.',
     'Do a barrel roll!',
     'FINISH HIM!',
