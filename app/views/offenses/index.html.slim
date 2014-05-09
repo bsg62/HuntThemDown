@@ -18,7 +18,7 @@ table.table.table-striped.table-condensed
     - @offenses.each do |offense|
       tr
         td.edit
-          a href=edit_victim_path(offense)
+          a href=edit_offense_path(offense)
             span.glyphicon.glyphicon-edit
 
         td = offense.created_at.strftime('%d.%m.%Y')
