@@ -1,4 +1,4 @@
-= form_for @offense, html: {class: 'form-horizontal'} do |f|
+= form_for @offense, html: {class: 'form-horizontal', :'ng-controller' => 'HuntThemDown.Offenses'} do |f|
   - if @offense.errors.any?
     #error_explanation
       h2 = "#{pluralize(@offense.errors.count, "error")} prohibited this offense from being saved:"
