@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require angular
+//= require ui-bootstrap
 //= require_tree .
 
 HuntThemDown = window.HuntThemDown || (window.HuntThemDown = {});
