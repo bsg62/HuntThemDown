@@ -79,6 +79,24 @@ private
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def offense_params
-    params.require(:offense).permit(:user_id, :victim_id, :offense_type_id, :name, :duration, :reason, :url, :ip_address)
+    parameters = params.require(:offense).permit(:user_id, :victim_id, :victim, :offense_type_id, :name, :duration, :reason, :url, :ip_address)
+
+    victim = parameters.fetch('victim', nil)
+
+    if victim
+      parameters['victim'] = find_or_create_victim(victim)
+    end
+
+    parameters
+  end
+
+  def find_or_create_victim(name)
+    victim = Victim.find_by(name: name)
+
+    unless victim
+      victim = Victim.create(name: name)
+    end
+
+    victim
   end
 end
