@@ -16,3 +16,7 @@
 //= require bootstrap
 //= require angular
 //= require_tree .
+
+HuntThemDown = window.HuntThemDown || (window.HuntThemDown = {});
+
+app = angular.module('HuntThemDown', []);
