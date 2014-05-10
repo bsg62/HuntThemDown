@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   post '/login', to: 'session#create'
   get '/logout', to: 'session#destroy'
 
-  get '/offenses/:offense_type_slug', to: 'offenses#index_with_offense_type', as: :offenses_type
-
   resources :users
   resources :victims
   resources :offenses
+
+  get '/offenses/:offense_type_slug', to: 'offenses#index_with_offense_type', as: :offenses_type
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
