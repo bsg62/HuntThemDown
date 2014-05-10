@@ -11,7 +11,7 @@
   .form-group
     = f.label :victim, class: 'col-sm-2 control-label'
     .col-sm-5
-      = collection_select(:offense, :victim_id, Victim.all, :id, :name, {}, class: 'form-control')
+      = f.text_field :victim_id, class: 'form-control', :'ng-model' => 'offense.victim', typeahead: 'victim for victim in getVictims() | filter:{name:$viewValue} | limitTo:8', autocomplete: 'off'
 
   .form-group
     = f.label :offense_type, class: 'col-sm-2 control-label'
