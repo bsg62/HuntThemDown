@@ -16,8 +16,9 @@
 //= require bootstrap
 //= require angular
 //= require ui-bootstrap
-//= require_tree .
+//= require_self
+//= require offenses
 
 HuntThemDown = window.HuntThemDown || (window.HuntThemDown = {});
 
-app = angular.module('HuntThemDown', []);
+app = angular.module('HuntThemDown', ['ui.bootstrap']);
