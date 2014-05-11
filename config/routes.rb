@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :victims
   resources :offenses
 
-  get '/offenses/:offense_type_slug', to: 'offenses#index_with_offense_type', as: :offenses_type
+  get '/offenses/type/:offense_type_slug', to: 'offenses#index_with_offense_type', as: :offenses_type
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
