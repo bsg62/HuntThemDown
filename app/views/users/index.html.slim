@@ -3,17 +3,23 @@ h2 User list
 table.table.table-striped.table-condensed
   thead
     tr
+      th.edit
       th Name
       th Email
-      th
-      th
+      th Offenses
 
   tbody
     - @users.each do |user|
       tr
+        td.edit
+          a href=user_path(user)
+            span.glyphicon.glyphicon-eye-open
+          ' &nbsp;
+          a href=edit_user_path(user)
+            span.glyphicon.glyphicon-edit
+
         td = user.name
         td = user.email
-        td = link_to 'Edit', edit_user_path(user)
-        td = link_to 'Delete', user, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = user.offenses.count
 
 = link_to 'New User', new_user_path
