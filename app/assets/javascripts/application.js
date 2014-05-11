@@ -19,6 +19,20 @@
 //= require_self
 //= require offenses
 
+var readyCallback = function() {
+    $('header nav ul li ul').addClass('dropdown-menu');
+    $('header nav ul li ul').parent().addClass('dropdown');
+    $('header nav ul li.dropdown').children('a').addClass('dropdown-toggle');
+    $('header nav ul li.dropdown').children('a').html(function(index, text){
+        return text + ' <b class="caret"></b>';
+    });
+
+    $('header nav ul li ul').prev().attr('data-toggle','dropdown');
+    $('header nav ul li ul').children('li').removeClass('active');
+};
+
+$(document).ready(readyCallback);
+
 HuntThemDown = window.HuntThemDown || (window.HuntThemDown = {});
 
 app = angular.module('HuntThemDown', ['ui.bootstrap']);

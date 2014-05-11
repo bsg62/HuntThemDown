@@ -12,7 +12,7 @@ html ng-app="HuntThemDown"
             small = random_quote
           nav.navbar.navbar-default
             .container
-              == render_navigation
+              == render_navigation(expand_all: true)
               p.navbar-text.navbar-right
                 span.glyphicon.glyphicon-user
                 =< user.name
