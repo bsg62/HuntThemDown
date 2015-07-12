@@ -1,7 +1,7 @@
 # Hunt Them Down
 ### Manage the heads of your enemies!
 
-[![Circle CI](https://circleci.com/gh/MadCatme/HuntThemDown.png?style=badge&circle-token=d085386ac48f004de3e7d83fdd9bbdc764399a7d)](https://circleci.com/gh/MadCatme/HuntThemDown)
+[![Circle CI](https://circleci.com/gh/MadCatme/HuntThemDown.svg?style=svg&circle-token=d085386ac48f004de3e7d83fdd9bbdc764399a7d)](https://circleci.com/gh/MadCatme/HuntThemDown)
 
 Hunt Them Down is proudly inspired by Joffrey Baratheon and Ser Ilyn Payne.
 
