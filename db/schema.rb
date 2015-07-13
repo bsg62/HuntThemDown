@@ -13,48 +13,48 @@
 
 ActiveRecord::Schema.define(version: 20140505163935) do
 
-  create_table "comments", force: true do |t|
+  create_table "comments", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
-    t.integer  "victim_id"
-    t.string   "body"
+    t.integer  "user_id",    limit: 4
+    t.integer  "victim_id",  limit: 4
+    t.string   "body",       limit: 255
   end
 
-  create_table "offense_types", force: true do |t|
+  create_table "offense_types", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
-    t.string   "slug"
+    t.string   "name",       limit: 255
+    t.string   "slug",       limit: 255
   end
 
-  create_table "offenses", force: true do |t|
+  create_table "offenses", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "victim_id"
-    t.integer  "user_id"
-    t.integer  "offense_type_id"
-    t.string   "name"
-    t.string   "duration"
+    t.integer  "victim_id",       limit: 4
+    t.integer  "user_id",         limit: 4
+    t.integer  "offense_type_id", limit: 4
+    t.string   "name",            limit: 255
+    t.string   "duration",        limit: 255
     t.date     "expires_at"
-    t.string   "reason"
-    t.string   "url"
-    t.string   "ip_address"
-    t.string   "hostname"
+    t.string   "reason",          limit: 255
+    t.string   "url",             limit: 255
+    t.string   "ip_address",      limit: 255
+    t.string   "hostname",        limit: 255
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
+    t.string   "name",            limit: 255
+    t.string   "email",           limit: 255
+    t.string   "password_digest", limit: 255
   end
 
-  create_table "victims", force: true do |t|
+  create_table "victims", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
+    t.string   "name",       limit: 255
   end
 
 end
