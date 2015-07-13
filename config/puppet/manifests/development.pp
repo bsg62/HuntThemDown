@@ -60,11 +60,17 @@ package { 'libmysqlclient-dev':
 
 # --- Ruby ---------------------------------------------------------------------
 
+exec { 'install_rvm_public_key':
+  cwd => "${home}",
+  command => "${as_vagrant} 'gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3'",
+  creates => "${home}/.gnupg/secring.gpg"
+}
+
 exec { 'install_rvm':
   cwd => "${home}",
   command => "${as_vagrant} 'curl -sSL https://get.rvm.io | bash -s stable'",
   creates => "${home}/.rvm",
-  require => Package['curl']
+  require => [ Package['curl'], Exec['install_rvm_public_key'] ]
 }
 
 exec { 'install_ruby':
