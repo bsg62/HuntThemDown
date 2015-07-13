@@ -19,6 +19,11 @@
       = collection_select(:offense, :offense_type_id, OffenseType.all, :id, :name, {}, class: 'form-control')
 
   .form-group
+    = f.label :user, class: 'col-sm-2 control-label'
+    .col-sm-5
+      = collection_select(:offense, :user_id, User.all, :id, :name, {}, class: 'form-control')
+
+  .form-group
     = f.label :name, class: 'col-sm-2 control-label'
     .col-sm-5
       = f.text_field :name, class: 'form-control'
