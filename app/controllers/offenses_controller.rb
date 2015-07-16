@@ -24,7 +24,13 @@ class OffensesController < ApplicationController
 
   # GET /offenses/new
   def new
-    @offense = Offense.new
+    get_params = request.GET
+
+    @offense = if get_params.fetch('name', nil)
+                 build_offense(get_params)
+               else
+                 Offense.new
+               end
   end
 
   # GET /offenses/1/edit
@@ -98,5 +104,15 @@ private
     end
 
     victim
+  end
+
+  def build_offense(params)
+    offense_data = {}
+    offense_data['name'] = params['name'] || ''
+    offense_data['offense_type_id'] = params['offense_type_id'] || 1
+    offense_data['url'] = params['url'] || ''
+    offense_data['ip_address'] = params['ip_address'] || ''
+
+    Offense.new(offense_data)
   end
 end
