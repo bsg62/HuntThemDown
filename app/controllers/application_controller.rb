@@ -78,6 +78,7 @@ class ApplicationController < ActionController::Base
   # @api private
   #
   def authorize!
+    session[:return_to] = request.fullpath
     redirect_to('/login', noctice: "Please log in!") unless user_logged_in?
   end
 
