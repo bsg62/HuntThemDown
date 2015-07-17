@@ -57,6 +57,7 @@ class ApplicationController < ActionController::Base
   def user_exists?
     !!user
   end
+  helper_method :user_exists?
 
   # Test if a user is logged in
   #
@@ -69,9 +70,17 @@ class ApplicationController < ActionController::Base
   # @api private
   #
   def user_logged_in?
-    user_id? && user_exists?
+    user_id? && user_exists? && user_totp?
   end
   helper_method :user_logged_in?
+
+  def user_totp?
+    if user.use_otp
+      !!session[:totp_auth]
+    else
+      true
+    end
+  end
 
   # Redirect logged out users to login form
   #

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'home#index'
   get '/login', to: 'login#index'
+  get '/login/otp', to: 'login#otp'
   post '/login', to: 'session#create'
+  post '/otp_auth', to: 'session#otp_auth'
   get '/logout', to: 'session#destroy'
 
   resources :users
