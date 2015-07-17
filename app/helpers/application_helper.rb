@@ -44,7 +44,9 @@ module ApplicationHelper
     'That\'s a big Twinkie.',
     'He didn\'t die of old age, either. He was poisoned, stabbed, shot, hung, stretched, disembowled, drawn and quartered.',
     'Ray... we\'d like to shoot the monster. Could you move, please?',
-    'and have you BURNED AT THE STAKE!'
+    'and have you BURNED AT THE STAKE!',
+    'There\'s just two ways this can end, and in both of them, you die!',
+    'Now you see me, now you\'re dead!'
   ].freeze
 
   def random_quote
