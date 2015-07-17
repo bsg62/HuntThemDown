@@ -38,6 +38,7 @@ gem 'memoizable'
 gem 'simple-navigation'
 
 gem 'active_model_otp'
+gem 'rqrcode'
 
 group :development, :test do
   gem 'rspec-rails'
