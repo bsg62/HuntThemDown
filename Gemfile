@@ -37,6 +37,8 @@ gem 'memoizable'
 
 gem 'simple-navigation'
 
+gem 'active_model_otp'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
