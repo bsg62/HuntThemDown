@@ -7,6 +7,16 @@ p
   strong Email:
   = @user.email
 
+table.qr
+  - @qr.modules.each_index do |x|
+    tr
+      - @qr.modules.each_index do |y|
+        - if @qr.dark?(x,y)
+          td.black
+        - else
+          td.white
+
+
 = link_to 'Edit', edit_user_path(@user)
 '|
 = link_to 'Back', users_path
