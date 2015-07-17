@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140505163935) do
+ActiveRecord::Schema.define(version: 20150717211357) do
 
   create_table "comments", force: :cascade do |t|
     t.datetime "created_at"
@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 20140505163935) do
     t.string   "name",            limit: 255
     t.string   "email",           limit: 255
     t.string   "password_digest", limit: 255
+    t.string   "otp_secret_key",  limit: 255
+    t.boolean  "use_otp",                     default: false
   end
 
   create_table "victims", force: :cascade do |t|
