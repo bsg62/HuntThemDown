@@ -1,0 +1,9 @@
+.col-md-4.col-md-offset-4
+  h2 Two-factor authentication
+  == form_tag(controller: 'session', action: 'two_factor', method: 'post') do
+    .form-group
+      == label_tag :authentication_code
+      == text_field_tag :otp, params[:otp], class: 'form-control'
+
+    .submit
+      ==> submit_tag 'Verify', class: 'btn btn-primary'

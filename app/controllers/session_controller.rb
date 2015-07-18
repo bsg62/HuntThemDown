@@ -10,7 +10,7 @@ class SessionController < ApplicationController
       url = root_path if url.eql?('/logout')
 
       if user.use_otp
-        return redirect_to('/login/otp')
+        return redirect_to('/login/two_factor')
       end
 
       logger.debug "URL to redirect to: #{url}"
@@ -21,7 +21,7 @@ class SessionController < ApplicationController
     end
   end
 
-  def otp_auth
+  def two_factor
     return redirect_to('/login') unless user_exists?
 
     if user.authenticate_otp(params[:otp])

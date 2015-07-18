@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'home#index'
   get '/login', to: 'login#index'
-  get '/login/otp', to: 'login#otp'
+  get '/login/two_factor', to: 'login#two_factor'
   post '/login', to: 'session#create'
-  post '/otp_auth', to: 'session#otp_auth'
+  post '/two_factor', to: 'session#two_factor'
   get '/logout', to: 'session#destroy'
 
   resources :users

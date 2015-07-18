@@ -4,7 +4,7 @@ class LoginController < ApplicationController
   def index
   end
 
-  def otp
+  def two_factor
     redirect_to('/login') unless user_exists?
   end
 end
