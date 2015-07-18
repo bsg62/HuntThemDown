@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'profile/show'
+
+  get 'profile/settings'
+
+  get 'profile/settings_common'
+
+  get 'profile/settings_password'
+
+  get 'profile/settings_two_factor'
+
+  get 'profile/show'
+
+  get 'profile/settings'
+
   root 'home#index'
   get '/login', to: 'login#index'
   get '/login/two_factor', to: 'login#two_factor'
