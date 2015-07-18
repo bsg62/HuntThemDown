@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'profile/show'
+  get '/profile', to: 'profile#show'
 
   get 'profile/settings'
 

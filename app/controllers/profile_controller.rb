@@ -1,5 +1,6 @@
 class ProfileController < ApplicationController
   def show
+    @user = user
   end
 
   def settings

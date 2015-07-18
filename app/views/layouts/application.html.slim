@@ -15,6 +15,6 @@ html ng-app="HuntThemDown"
               == render_navigation(expand_all: true)
               p.navbar-text.navbar-right
                 span.glyphicon.glyphicon-user
-                =< user.name
+                =< link_to(user.name, '/profile', class: 'navbar-link')
                 ==< link_to('(Logout)', '/logout', class: 'navbar-link')
         == yield
