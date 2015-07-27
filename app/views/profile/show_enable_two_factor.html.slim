@@ -1,0 +1,47 @@
+.panel.panel-default
+  .panel-heading Enable two-factor authentication
+  .panel-body
+    .list-group
+      li.list-group-item
+        h3 1. Download one of these apps
+        ul
+          li
+            | iOS
+            ul
+              li = link_to('Google Authenticator', 'https://itunes.apple.com/de/app/google-authenticator/id388497605', target: '_blank')
+              li = link_to('Duo Mobile', 'https://itunes.apple.com/us/app/duo-mobile/id422663827', target: '_blank')
+
+          li
+            | Android
+            ul
+              li = link_to('Google Authenticator', 'https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2', target: '_blank')
+              li = link_to('Duo Mobile', 'https://play.google.com/store/apps/details?id=com.duosecurity.duomobile', target: '_blank')
+
+          li
+            | Windows Phone
+            ul
+              li = link_to('Authenticator', 'https://www.microsoft.com/de-de/store/apps/authenticator/9nblggh09llf', target: '_blank')
+
+      li.list-group-item style="overflow: hidden"
+        div style="float: left"
+          h3 2. Configuring the app
+          p.text-info Open your authentication app and add your Hunt Them Down account by scanning the QR-code to the right.
+        table.qr
+          - @qr.modules.each_index do |x|
+            tr
+              - @qr.modules.each_index do |y|
+                - if @qr.dark?(x, y)
+                  td.black
+                - else
+                  td.white
+
+      li.list-group-item
+        h3 3. Enter the the 6-digit code the app generates <small>Beware: the codes will change every 30 seconds</small>
+        = form_tag '/profile/settings/enable-2fa', method: 'post', class: 'form-inline'
+          - flash.each do |key, value|
+            p.alert.alert-danger = value
+
+          .form-group
+            = text_field_tag :confirmation_otp, nil, class: 'form-control', placeholder: 'Authentication Code'
+
+          button.btn.btn-success Enable

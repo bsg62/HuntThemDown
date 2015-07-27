@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @qr = RQRCode::QRCode.new(@user.provisioning_uri('HuntThemDown'), :level => :h)
+
   end
 
   # GET /users/new

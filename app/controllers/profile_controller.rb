@@ -1,5 +1,5 @@
 class ProfileController < ApplicationController
-  before_action :set_user, only: [:show, :settings, :settings_common, :settings_password, :settings_two_factor, :save_password]
+  before_action :set_user
   before_filter :authorize!
 
   def show
@@ -32,6 +32,34 @@ class ProfileController < ApplicationController
     @user.save
 
     redirect_to profile_settings_path
+  end
+
+  def show_enable_two_factor
+    if !@user.use_otp?
+      @user.update_attribute(:otp_secret_key, ROTP::Base32.random_base32)
+      @qr = RQRCode::QRCode.new(@user.provisioning_uri('HuntThemDown'), :level => :h)
+    else
+      redirect_to profile_settings_2fa_path
+    end
+  end
+
+  def enable_two_factor
+    if user.authenticate_otp(params[:confirmation_otp])
+      @user.update_attribute(:use_otp, true)
+      flash.notice = '2FA enabled successfully!'
+
+      redirect_to profile_settings_2fa_path
+    else
+      redirect_to '/profile/settings/enable-2fa'
+    end
+  end
+
+  def show_disable_two_factor
+
+  end
+
+  def disable_two_factor
+
   end
 
   private

@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .qr {
+  float: right;
   border-width: 0;
   border-style: none;
   border-color: #0000ff;
@@ -20,3 +21,7 @@
 }
 .qr td.black { background-color: #000; }
 .qr td.white { background-color: #fff; }
+
+.list-group-item h3 {
+  margin-top: 0;
+}
