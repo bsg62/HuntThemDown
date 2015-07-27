@@ -1,7 +1,10 @@
-HuntThemDown.Offenses = ($scope, $http)->
+class OffenseController
+  @$inject = ['$scope', '$http']
 
-  $scope.getVictims = ->
-    $http.get('/victims.json').then((result)->
+  constructor: (@$scope, @$http) ->
+
+  getVictims: ->
+    @$http.get('/victims.json').then((result)->
       victims = []
 
       angular.forEach(result.data, (item)->
@@ -10,3 +13,5 @@ HuntThemDown.Offenses = ($scope, $http)->
 
       victims
     )
+
+angular.module('HuntThemDown').controller('HuntThemDown.OffenseController', OffenseController)

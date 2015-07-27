@@ -1,4 +1,4 @@
-= form_for @offense, html: {class: 'form-horizontal', :'ng-controller' => 'HuntThemDown.Offenses'} do |f|
+= form_for @offense, html: {class: 'form-horizontal', :'ng-controller' => 'HuntThemDown.OffenseController as offenseCtrl'} do |f|
   - if @offense.errors.any?
     #error_explanation
       h2 = "#{pluralize(@offense.errors.count, "error")} prohibited this offense from being saved:"
@@ -11,7 +11,7 @@
   .form-group
     = f.label :victim, class: 'col-sm-2 control-label'
     .col-sm-5
-      = f.text_field :victim, class: 'form-control', :'ng-model' => 'offense.victim', typeahead: 'victim for victim in getVictims() | filter:{name:$viewValue} | limitTo:8', autocomplete: 'off'
+      = f.text_field :victim, class: 'form-control', :'ng-model' => 'offense.victim', typeahead: 'victim for victim in offenseCtrl.getVictims() | filter:{name:$viewValue} | limitTo:8', autocomplete: 'off'
 
   .form-group
     = f.label :offense_type, class: 'col-sm-2 control-label'
