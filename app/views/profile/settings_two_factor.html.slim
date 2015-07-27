@@ -4,3 +4,4 @@ p Find me in app/views/profile/settings_two_factor.html.slim
 - if !@user.use_otp?
   = link_to('Enable 2FA', '/profile/settings/enable-2fa')
 - else
+  = link_to('Disable 2FA', '/profile/settings/disable-2fa')

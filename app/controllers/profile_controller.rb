@@ -55,11 +55,20 @@ class ProfileController < ApplicationController
   end
 
   def show_disable_two_factor
-
+    unless @user.use_otp?
+      redirect_to profile_settings_2fa_path
+    end
   end
 
   def disable_two_factor
+    if user.authenticate_otp(params[:confirmation_otp])
+      @user.update_attribute(:use_otp, false)
+      flash.notice = '2FA disabled successfully!'
 
+      redirect_to profile_settings_2fa_path
+    else
+      redirect_to '/profile/settings/disable-2fa'
+    end
   end
 
   private

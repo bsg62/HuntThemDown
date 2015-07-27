@@ -1,0 +1,14 @@
+.panel.panel-default
+  .panel-heading Disable two-factor authentication
+  .panel-body
+    .list-group
+      li.list-group-item
+        h3 Enter a 6-digit code the app generates to disable two-factor authentication
+        = form_tag '/profile/settings/disable-2fa', method: 'post', class: 'form-inline'
+          - flash.each do |key, value|
+            p.alert.alert-danger = value
+
+          .form-group
+            = text_field_tag :confirmation_otp, nil, class: 'form-control', placeholder: 'Authentication Code'
+
+          button.btn.btn-danger Disable
