@@ -37,7 +37,7 @@
 
       li.list-group-item
         h3 3. Enter the the 6-digit code the app generates <small>Beware: the codes will change every 30 seconds</small>
-        = form_tag '/profile/settings/enable-2fa', method: 'post', class: 'form-inline'
+        = form_tag settings_enable_2fa_path, method: 'post', class: 'form-inline'
           - flash.each do |key, value|
             p.alert.alert-danger = value
 

@@ -3,22 +3,21 @@ Rails.application.routes.draw do
 
   get 'profile/settings'
 
-  get 'profile/settings/common', to: 'profile#settings_common'
+  get 'settings/profile', to: 'profile#settings_common'
 
-  get  'profile/settings/password', to: 'profile#settings_password'
-  post 'profile/settings/password', to: 'profile#save_password'
+  get  'settings/password', to: 'profile#settings_password'
+  post 'settings/password', to: 'profile#save_password'
 
-  get 'profile/settings/2fa', to: 'profile#settings_two_factor'
+  get 'settings/2fa', to: 'profile#settings_two_factor'
 
-  get 'profile/settings/enable-2fa', to: 'profile#show_enable_two_factor'
-  post 'profile/settings/enable-2fa', to: 'profile#enable_two_factor'
+  get 'settings/enable-2fa', to: 'profile#show_enable_two_factor'
+  post 'settings/enable-2fa', to: 'profile#enable_two_factor'
 
-  get 'profile/settings/disable-2fa', to: 'profile#show_disable_two_factor'
-  post 'profile/settings/disable-2fa', to: 'profile#disable_two_factor'
+  get 'settings/disable-2fa', to: 'profile#show_disable_two_factor'
+  post 'settings/disable-2fa', to: 'profile#disable_two_factor'
 
-  get 'profile/show'
 
-  get 'profile/settings'
+  get 'settings', to: 'profile#settings'
 
   root 'home#index'
   get '/login', to: 'login#index'

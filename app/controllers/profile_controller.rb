@@ -31,7 +31,7 @@ class ProfileController < ApplicationController
     @user.update(password: params[:new_password])
     @user.save
 
-    redirect_to profile_settings_path
+    redirect_to settings_path
   end
 
   def show_enable_two_factor
@@ -39,7 +39,7 @@ class ProfileController < ApplicationController
       @user.update_attribute(:otp_secret_key, ROTP::Base32.random_base32)
       @qr = RQRCode::QRCode.new(@user.provisioning_uri('HuntThemDown'), :level => :h)
     else
-      redirect_to profile_settings_2fa_path
+      redirect_to settings_2fa_path
     end
   end
 
@@ -48,15 +48,15 @@ class ProfileController < ApplicationController
       @user.update_attribute(:use_otp, true)
       flash.notice = '2FA enabled successfully!'
 
-      redirect_to profile_settings_2fa_path
+      redirect_to settings_2fa_path
     else
-      redirect_to '/profile/settings/enable-2fa'
+      redirect_to settings_enable_2fa_path
     end
   end
 
   def show_disable_two_factor
     unless @user.use_otp?
-      redirect_to profile_settings_2fa_path
+      redirect_to settings_2fa_path
     end
   end
 
@@ -65,9 +65,9 @@ class ProfileController < ApplicationController
       @user.update_attribute(:use_otp, false)
       flash.notice = '2FA disabled successfully!'
 
-      redirect_to profile_settings_2fa_path
+      redirect_to settings_2fa_path
     else
-      redirect_to '/profile/settings/disable-2fa'
+      redirect_to settings_disable_2fa_path
     end
   end
 
