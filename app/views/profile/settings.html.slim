@@ -1,2 +1,6 @@
 h1 Profile#settings
 p Find me in app/views/profile/settings.html.slim
+
+ul
+  li = link_to('Change password', profile_settings_password_path)
+  li = link_to('Change 2FA settings', profile_settings_two_factor_path)

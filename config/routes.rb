@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   get 'profile/settings_common'
 
-  get 'profile/settings_password'
+  get  'profile/settings_password'
+  post 'profile/settings_password', to: 'profile#save_password'
 
   get 'profile/settings_two_factor'
 
