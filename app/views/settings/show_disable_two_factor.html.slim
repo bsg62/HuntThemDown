@@ -4,11 +4,11 @@
     .list-group
       li.list-group-item
         h3 Enter a 6-digit code the app generates to disable two-factor authentication
-        = form_tag settings_disable_2fa_path, method: 'post', class: 'form-inline'
+        = form_tag settings_enable_2fa_path, method: 'post', class: 'form-inline', :'ng-controller' => 'HuntThemDown.TwoFactorAuthController as TwoFA_Ctrl'
           - flash.each do |key, value|
             p.alert.alert-danger = value
 
           .form-group
-            = text_field_tag :confirmation_otp, nil, class: 'form-control', placeholder: 'Authentication Code'
+            = text_field_tag :confirmation_otp, nil, class: 'form-control', placeholder: 'Authentication Code', :'ng-model' => 'otp', maxlength: 6
 
-          button.btn.btn-danger Disable
+          button.btn.btn-success ng-disabled="!TwoFA_Ctrl.isFormSubmittable()" Disable

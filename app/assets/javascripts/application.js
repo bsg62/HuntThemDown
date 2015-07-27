@@ -17,6 +17,7 @@
 //= require ui-bootstrap
 //= require_self
 //= require offenses
+//= require settings
 
 var readyCallback = function() {
     $('header nav ul li ul').addClass('dropdown-menu');
