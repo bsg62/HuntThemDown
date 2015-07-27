@@ -75,7 +75,7 @@ class ApplicationController < ActionController::Base
   helper_method :user_logged_in?
 
   def user_totp?
-    if user.use_otp
+    if user.use_otp?
       !!session[:totp_auth]
     else
       true
