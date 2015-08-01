@@ -8,13 +8,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.network 'forwarded_port', guest: 3000, host: 3000
 
-  config.vm.provision :puppet do |puppet|
-    puppet.manifests_path = 'config/puppet/manifests'
-    puppet.manifest_file = 'development.pp'
-  end
+  config.vm.provision "shell", privileged: false, path: "config/vagrant/setup.sh"
 
   config.vm.provider "virtualbox" do |v|
-    v.memory = 1024
-    v.cpus = 2
+    v.memory = 2048
+    v.cpus = 4
   end
 end
