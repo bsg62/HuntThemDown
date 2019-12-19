@@ -93,7 +93,7 @@ GEM
       websocket-driver (>= 0.2.0)
     puma (2.12.2)
     puma (2.12.2-java)
-    rack (1.6.4)
+    rack (1.6.12)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.3)
